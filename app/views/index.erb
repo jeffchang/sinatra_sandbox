@@ -1,23 +1,41 @@
-<div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
+<html>
+<head>
+  <title>Sinatra Sandbox</title>
+</head>
 
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
+<body>
+<div class="container">
+  <h1>Welcome to the Sandbox!</h1>
+  <p>A playground for the Sinatra in all of us</p>
+
+  <form method="get" action='/cool_url'>
+    Get a URL!: <input type="text" name="cool_url" placeholder = "URL goes here">
+    <button>Go!</button>
+    <br>
+  </form>
+  <br><br>
+
+  <form method="post" action='/cool_url'>
+    Post a URL!: <input type="text" name="lollipop[title]" placeholder="URL goes here">
+    <input type="text" name="lollipop[price]" placeholder="Second input field!">
+    <textarea name="lollipop[description]"></textarea>
+    <button>Go!</button>
+    <br>
+  </form>
+
+<textarea cols="15" rows="4" name="atextarea">
+  We're inside the text area!
+</textarea>
+<br>
+<br>
+<input type="checkbox" name="milk" value="Milk"> We need milk!<br>
+<input type="radio" name="radio1" value="Eggs"> We also need eggs!<br>
+<br>
+<select>
+  <option>Cherries</option>
+  <option>Chocolate</option>
+  <option>Whey Protein</option>
+</select>
 </div>
+</body>
+</html>
